@@ -127,23 +127,43 @@ namespace Crop_Profile_Console_App
 
     public class Location
     {
+        [JsonPropertyName("name")]
         public string name { get; set; }
+
+        [JsonPropertyName("region")]
         public string region { get; set; }
+
+        [JsonPropertyName("country")]
         public string country { get; set; }
+
+        [JsonPropertyName("lat")]
         public double lat { get; set; }
+
+        [JsonPropertyName("lon")]
         public double lon { get; set; }
+
+        [JsonPropertyName("tz_id")]
         public string tz_id { get; set; }
+
+        [JsonPropertyName("localtime_epoch")]
         public int localtime_epoch { get; set; }
+
+        [JsonPropertyName("localtime")]
         public string localtime { get; set; }
     }
 
     public class Result
     {
+        [JsonPropertyName("location")]
         public Location location { get; set; }
+
+        [JsonPropertyName("current")]
         public Current current { get; set; }
+
+        [JsonPropertyName("forecast")]
         public Forecast forecast { get; set; }
 
-        public Result GetWeatherForecast()
+        public Result GetResult()
         {
             var client = new RestClient("https://weatherapi-com.p.rapidapi.com/forecast.json");
             var request = new RestRequest();
@@ -154,6 +174,7 @@ namespace Crop_Profile_Console_App
             var response = client.Get(request);
             Result result = JsonSerializer.Deserialize<Result>(response.Content.ToString());
             //string data = result.ToString();
+            //System.Console.WriteLine(result.location.country);
             return result;
         }
     }

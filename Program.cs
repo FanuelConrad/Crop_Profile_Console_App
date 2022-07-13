@@ -17,9 +17,11 @@ namespace Crop_Profile_Console_App
         {
             //Temperature.GetTmean();
             Temperature temperature=new Temperature();
-            temperature.GetTmean();
-            //WeatherForecast weatherForecast=new WeatherForecast();
-            //weatherForecast.GetWeatherForecast();
+            //temperature.GetTmean();
+        Result result=new Result();
+            //result.GetResult();
+            double temp=temperature.GetAvgTemp();
+            System.Console.WriteLine(temp);
         }
     }
 }
