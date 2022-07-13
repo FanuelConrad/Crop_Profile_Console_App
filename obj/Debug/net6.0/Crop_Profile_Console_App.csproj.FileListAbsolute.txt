@@ -17,3 +17,5 @@ C:\Users\Hp\Documents\GitHub\Crop_Profile_Console_App\bin\Debug\net6.0\CsvHelper
 C:\Users\Hp\Documents\GitHub\Crop_Profile_Console_App\obj\Debug\net6.0\Crop_Profile_Console_App.csproj.CopyComplete
 C:\Users\Hp\Documents\GitHub\Crop_Profile_Console_App\bin\Debug\net6.0\RestSharp.dll
 C:\Users\Hp\Documents\GitHub\Crop_Profile_Console_App\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Hp\Documents\GitHub\Crop_Profile_Console_App\bin\Debug\net6.0\DotNetEnv.dll
+C:\Users\Hp\Documents\GitHub\Crop_Profile_Console_App\bin\Debug\net6.0\Sprache.dll

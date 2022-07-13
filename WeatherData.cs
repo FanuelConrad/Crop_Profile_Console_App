@@ -165,16 +165,16 @@ namespace Crop_Profile_Console_App
 
         public Result GetResult()
         {
+            DotNetEnv.Env.Load();
             var client = new RestClient("https://weatherapi-com.p.rapidapi.com/forecast.json");
             var request = new RestRequest();
             request.AddQueryParameter("q", "Eldoret");
             request.AddQueryParameter("days", "3");
-            request.AddHeader("X-RapidAPI-Key", "5f5f1973ebmsh65d0833d91e055ep17caf1jsncc76a789bc6e");
+            request.AddHeader("X-RapidAPI-Key", Environment.GetEnvironmentVariable("API_KEY"));
             request.AddHeader("X-RapidAPI-Host", "weatherapi-com.p.rapidapi.com");
             var response = client.Get(request);
             Result result = JsonSerializer.Deserialize<Result>(response.Content.ToString());
-            //string data = result.ToString();
-            //System.Console.WriteLine(result.location.country);
+
             return result;
         }
     }
