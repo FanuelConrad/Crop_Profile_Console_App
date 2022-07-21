@@ -5,8 +5,6 @@ using RestSharp;
 
 namespace Crop_Profile_Console_App
 {
-
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
     public class Astro
     {
         public string sunrise { get; set; }
@@ -163,12 +161,20 @@ namespace Crop_Profile_Console_App
         [JsonPropertyName("forecast")]
         public Forecast forecast { get; set; }
 
-        public Result GetResult()
+        //private string _locationCoordinates {get;set;}
+
+        public Result(/*string locationCoordinates*/)
+        {
+
+            //this._locationCoordinates=locationCoordinates;
+        }
+
+        public Result GetResult(string locationCoordinates)
         {
             DotNetEnv.Env.Load();
             var client = new RestClient("https://weatherapi-com.p.rapidapi.com/forecast.json");
             var request = new RestRequest();
-            request.AddQueryParameter("q", "Eldoret");
+            request.AddQueryParameter("q", locationCoordinates);
             request.AddQueryParameter("days", "3");
             request.AddHeader("X-RapidAPI-Key", Environment.GetEnvironmentVariable("API_KEY"));
             request.AddHeader("X-RapidAPI-Host", "weatherapi-com.p.rapidapi.com");
