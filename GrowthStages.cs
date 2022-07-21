@@ -27,7 +27,6 @@ namespace Crop_Profile_Console_App
 
         public IEnumerable<GrowthStages> GetGrowthStages()
         {
-            GrowthStages result;
             var reader = new StreamReader(@"C:\Users\Hp\Documents\GitHub\Crop_Profile_Console_App\GrowthStages.csv");
             var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
             csv.Context.RegisterClassMap<GrowthStagesMap>();

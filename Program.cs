@@ -31,8 +31,11 @@ namespace Crop_Profile_Console_App
             //ETo eTo = new ETo("0.5182,35.2717", "North", "April");
             //System.Console.WriteLine(eTo.GetETo());
 
-            GrowthStages growthStages=new GrowthStages("Cabbage");
-            System.Console.WriteLine(growthStages.GetInitialStage());
+            //GrowthStages growthStages=new GrowthStages("Cabbage");
+            //System.Console.WriteLine(growthStages.GetInitialStage());
+
+            CropFactor cropFactor=new CropFactor("Cabbage");
+            System.Console.WriteLine(cropFactor.GetLateSeasonStage());
         }
     }
 }
